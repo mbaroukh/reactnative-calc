@@ -73,6 +73,7 @@ git clone git@github.com:mbaroukh/reactnative-calc.git
 ```bash
 npm install
 ```
+(200+ Mo to download to build a 7Mo app ...)
 
 * start an emulator
 
@@ -97,6 +98,63 @@ npm start
 
 ## What I've learned
 
+### You have to hack React
+
+I'm pretty sur that using React Native out of the box without a good knowledge of
+what happened behind the scene will always force you to adapt your app to react Native
+capabilities.
+But to make a great app, you have to hack React to adapt React to your app.
+
+### Speed
+
+React native apps are fast because view are native components.
+But there is another reason : the javascript thread managing the
+application state is not the ui thread. As I understand, the ui thread
+only take care of ui. So the application never seems laggy.
 
 
+### [Redux](http://redux.js.org/index.html)
+
+In this app, I uses Redux for state management.
+There are some more like [Mobx](http://mobxjs.github.io/mobx/) or [Reflux](https://github.com/reflux/refluxjs).
+
+Redux works nice because of React hability to update only what changed on the view.
+
+I's easy to understand and to use.
+Don't know what will happened when the application grows.
+
+The biggest benefit is the ability to test reducers that are simple functions.
+(ex : [keypress](blob/master/app/reducers/keypress.js))
+
+
+### ES2015
+
+Out of the box, ReactNative uses ES2015 via Babel.
+For this, it use the npm package "babel-preset-react-native" as a dependency and the "react-native" preset.
+But when you test (here with mocha), default configuration while use ES5.
+When you wan't to use Babel for your tests, you need to create a [.babelrc](blob/master/.babelrc) which contains the same presets has RN.
+
+
+
+## TODO
+
+### keys sizes
+
+keys sizes are computed base on screen width.
+They should be computed base on parent width.
+
+### look at [async flows](http://redux.js.org/docs/advanced/AsyncFlow.html) for redux
+
+the actual app's actions are not time consuming so it's better as is.
+but if there where, for instance, network requests, they couldn't run synchonously.
+
+### look at [this syntax](https://corbt.com/posts/2016/03/16/detecting-orientation-in-react-native.html) for store actions
+
+```javascript
+export function appLayout():StoreAction {
+```
+
+I did not found any reference to it in redux docs.
+
+}
 
