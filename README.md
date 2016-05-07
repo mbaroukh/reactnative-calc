@@ -124,7 +124,7 @@ I's easy to understand and to use.
 Don't know what will happened when the application grows.
 
 The biggest benefit is the ability to test reducers that are simple functions.
-(ex : [keypress](blob/master/app/reducers/keypress.js))
+(ex : [keypress](app/reducers/keypress.js))
 
 
 ### ES2015
@@ -132,7 +132,7 @@ The biggest benefit is the ability to test reducers that are simple functions.
 Out of the box, ReactNative uses ES2015 via Babel.
 For this, it use the npm package "babel-preset-react-native" as a dependency and the "react-native" preset.
 But when you test (here with mocha), default configuration while use ES5.
-When you wan't to use Babel for your tests, you need to create a [.babelrc](blob/master/.babelrc) which contains the same presets has RN.
+When you wan't to use Babel for your tests, you need to create a [.babelrc](.babelrc) which contains the same presets has RN.
 
 
 
