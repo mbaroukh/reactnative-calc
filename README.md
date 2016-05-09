@@ -132,8 +132,7 @@ The biggest benefit is the ability to test reducers that are simple functions.
 Out of the box, ReactNative uses ES2015 via Babel.
 For this, it use the npm package "babel-preset-react-native" as a dependency and the "react-native" preset.
 But when you test (here with mocha), default configuration while use ES5.
-When you wan't to use Babel for your tests, you need to create a [.babelrc](.babelrc) which contains the same presets has RN.
-
+When you wan't to use Babel for your tests, you need to create a [.babelrc](.babelrc) which contains the same presets as RN.
 
 
 ## TODO
@@ -142,6 +141,11 @@ When you wan't to use Babel for your tests, you need to create a [.babelrc](.bab
 
 keys sizes are computed base on screen width.
 They should be computed base on parent width.
+
+### keys font size
+
+Font size are hard coded. And in landscape mode, on some devices, the MR/MC/M+/M- are too big to fit.  
+Due to their size, they are not always centered.
 
 ### look at [async flows](http://redux.js.org/docs/advanced/AsyncFlow.html) for redux
 
@@ -155,6 +159,3 @@ export function appLayout():StoreAction {
 ```
 
 I did not found any reference to it in redux docs.
-
-}
-
