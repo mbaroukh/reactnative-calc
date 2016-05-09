@@ -115,17 +115,15 @@ only take care of ui. So the application never seems laggy.
 
 ### [Redux](http://redux.js.org/index.html)
 
-In this app, I uses Redux for state management.
-There are some more like [Mobx](http://mobxjs.github.io/mobx/) or [Reflux](https://github.com/reflux/refluxjs).
-
+In this app, I uses Redux for state management. 
 Redux works nice because of React hability to update only what changed on the view.
+It's easy to understand and to easy use.
+But for now, I don't know what will happened when the application grows.
 
-I's easy to understand and to use.
-Don't know what will happened when the application grows.
-
-The biggest benefit is the ability to test reducers that are simple functions.
+For me, the biggest benefit is the ability to test reducers that are simple functions.
 (ex : [keypress](app/reducers/keypress.js))
 
+Note: There are other state management libs like [Mobx](http://mobxjs.github.io/mobx/) or [Reflux](https://github.com/reflux/refluxjs). To be tried in some futur projects.
 
 ### ES2015
 
